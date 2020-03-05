@@ -1,0 +1,99 @@
+<!DOCTYPE html>  
+    <html>  
+    <head>  
+    <meta charset="UTF-8">
+        <title>Captcha Page</title> 
+        <style>
+    body {
+      background-image: url("bg.jpg");
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: 100% 100%;
+    }
+    [data-text] {
+       color: black;
+    }
+       [data-text]::after {
+           content: attr(data-text);
+       }
+    #form_container
+    {
+        width: 50%;
+        margin-top:10%;
+        background: rgba(255,255,255,0.90); 
+        border-radius: 20px;
+    }
+    span
+    {
+        background-image: url("capimg.jpg");
+        background-size: 100% 100%;
+        
+    }
+    input {
+        border-radius: 5px;
+        background-color: silver;
+    }
+    #ourArea
+        {
+          margin-top:5%;
+          background: rgba(255,255,255,0.75);
+          border-radius: 30px;
+        }
+</style>
+    </head>  
+    <body id="captchabody"> 
+        <center> 
+
+        <div id="form_container">  
+            <h2>Captcha Validation App</h2> 
+            <div>Please enter the text below <br>
+                <font size="6" color="black">
+                <span data-text=<%= captcha %> ></span>
+            </font>
+            </div> 
+            <br> 
+            
+            <form action='/captcha-validate' method='POST'>
+            <div class="d-flex align-items-center">
+                <input id="captcha-field" name='textCompare' autofocus autocomplete="off" class="form-control mr-3" type="text" style="flex: 1;">
+                <button class="btn btn-primary">Verify</button>
+            </div>
+            </form> 
+            <br>
+            &ensp;
+            &ensp;
+            <a href="/">Refresh</a>
+            <br/>  
+            <br/>  
+            <br>
+            <hr color="red" align="center" width="25%">
+      
+          <center>
+              <b><i><u>contact Details</b></i></u><br>
+          </center>
+      
+      
+          <center>
+          
+                  <i>
+                      Email id:-<u>
+                          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=akn0038@gmail.com">
+                      akn0038@gmail.com
+                  </a>
+                  </u>
+                  </i>
+                  <br>
+                  <i>
+                      Phone No:-<u>+91-8228059429</u>
+                  </i>
+          
+          </center>
+      
+      <hr color="red" align="center" width="25%">
+      <br>
+        </div> 
+        </center> 
+
+       
+    </body> 
+    </html>
